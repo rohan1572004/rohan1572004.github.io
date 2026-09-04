@@ -11,9 +11,9 @@ const ROLES = [
 // ---- Profile viewer counter ----
 const visitorCountEl = document.getElementById('visitorCount');
 if (visitorCountEl) {
-  const storageKey = 'portfolio_profile_views';
+  const storageKey = 'portfolio_profile_views_v2';
   const saved = Number(localStorage.getItem(storageKey));
-  const currentCount = Number.isFinite(saved) && saved >= 1 ? saved + 1 : 1;
+  const currentCount = Number.isFinite(saved) && saved >= 0 ? saved + 1 : 0;
   localStorage.setItem(storageKey, String(currentCount));
   visitorCountEl.textContent = new Intl.NumberFormat('en-US').format(currentCount);
 }
